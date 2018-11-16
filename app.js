@@ -1,16 +1,5 @@
 //we need to create classes cf. class diagram. There is a JS-file specifically for that where we need to move the classes to.
 
-class User {
-    constructor(username, password){
-        this.username = username;
-        this.password = password;
-    }
-
-    validatepass (password){
-        return true;
-    }
-}
-
 //create array of users
 var users = [];
 
@@ -58,32 +47,35 @@ function submit(){
     }
 }
 
-
-
-
 //go button - create function, match html
 
-function go(){
-    console.log('just ckeckin');
-    window.location.href = 'index2.html'
+function show(courseId) {
+    var course = assignedCourses.getByCourseId(courseId);
+    document.getElementById('details').innerHTML = course.teacher + course.createHTMLDetails();
 }
 
+//we need a javascript function responsible for building course page in HTML - check js & html to do lists
 
- //if (userinputUsername == users)
+//create course
+ 
 
-
-
-
-//check if input matches stored user - docum
-
-
-
-
+var courses = [new Course('001', 'Inside Sales for Idiots', 'beginner', '5', 'Johnny Knowitall'),
+new Course('002', 'Company Introduction', 'beginner', '2', 'Sponge Bob')];
+//how do I display course constructors in html?
+var assignedCourses =  new AssignedCourse(courses) 
 
 
+//console.log(html)
+
+document.getElementById('courses').innerHTML = assignedCourses.createHTML();
+//how do I vary between the courses and adapt correct tect to correct course? And how to add more text - where do I do that?
 
 
-// We need to store the user input information
-// Now we need to compare the input information with our existing users
-    // If user exist, log him in
-    // If user doesnt exist, deny access
+ 
+
+
+
+
+
+
+
