@@ -10,7 +10,7 @@ users.push(new User("user4", "pass4"));
 
 
 function submit(){
-    console.log('we react to user btn click')
+    //console.log('we react to user btn click')
 
     // Store user input
     // 1. Select html input field
@@ -47,20 +47,21 @@ function submit(){
     }
 }
 
-//go button - create function, match html
+//shows course details in html
 
 function show(courseId) {
     var course = assignedCourses.getByCourseId(courseId);
-    document.getElementById('details').innerHTML = course.teacher + course.createHTMLDetails();
+    document.getElementById('details').innerHTML = course.createHTMLDetails();
 }
 
-//we need a javascript function responsible for building course page in HTML - check js & html to do lists
 
 //create course
- 
 
 var courses = [new Course('001', 'Inside Sales for Idiots', 'beginner', '5', 'Johnny Knowitall'),
-new Course('002', 'Company Introduction', 'beginner', '2', 'Sponge Bob')];
+new Course('002', 'Company Introduction', 'beginner', '2', 'Sponge Bob'),
+new Course('003', 'Company Introduction 2', 'intermediate', '2', 'Sponge Bob', '<h1>Let\'s get started on Course 1</h1><br>Your about to become even more brainy. Course 1 will teach you everything you need to know about awesome stuff such as: <br>Talking to people<br>Becoming successful<br>Hacking life.')]
+//how can I write a very long string in multiple lines? 
+//how can I add course content in a simpler way?
 //how do I display course constructors in html?
 var assignedCourses =  new AssignedCourse(courses) 
 
@@ -70,7 +71,9 @@ var assignedCourses =  new AssignedCourse(courses)
 document.getElementById('courses').innerHTML = assignedCourses.createHTML();
 //how do I vary between the courses and adapt correct tect to correct course? And how to add more text - where do I do that?
 
-
+function goToQuiz(){
+    window.location.href = 'index2.html'
+};
  
 
 
