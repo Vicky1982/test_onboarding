@@ -15,28 +15,33 @@ class User {
 }
 
 class Course {
-    constructor(courseId, topic, level, credit, teacher, content) {
+    constructor(courseId, topic, level, credit, teacher, title, body) {
         this.courseId = courseId;
         this.topic = topic;
         this.level = level;
         this.credit = credit;
         this.teacher = teacher;
-        this.content = content;
+        this.title = title;
+        this.body = body
 
     }
 
     updateCourse(body) {
         this.body = body
     }
-
+//link that opens course content
     createHTMLList() {
-        return '<li><a href="#" onclick="show('+this.courseId+')">' + this.topic + '</a></li>' //what does this do?
+        return '<li><a href="#" onclick="show('+this.courseId+')">' + this.topic + '</a></li>' 
     }
-
+//course content
     createHTMLDetails() {
-        return '<p>Emne: ' + this.topic + '</p><p>Lærer: ' + this.teacher + '</p><p>Level: ' + this.level + '</p>';
+        return '<p>Topic: ' + this.topic + '</p><p>Teacher: ' + this.teacher + 
+        '</p><p>Level: ' + this.level + '</p><p>content: <h1>' + this.title + 
+        '</h1> ' + this.body + '</p>' + '<button id='+this.id+' onclick="goToQuiz('+this.courseId+')">Go To Quiz</button>';
     }
 }
+
+
 
 class AssignedCourse {
     constructor(courses) {
@@ -74,3 +79,5 @@ newUser2.changeUsername('elephant')
 let name = 'me'
 
 name.changeUsername()*/
+
+
